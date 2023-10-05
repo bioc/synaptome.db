@@ -1,7 +1,7 @@
 Package: synaptome.db
 Type: Package
 Title: Synamptosome Proteome Database
-Version: 0.99.14
+Version: 0.99.15
 Date: 2021-09-25
 Authors@R: c(
     person("Anatoly", "Sorokin", 
@@ -16,7 +16,7 @@ Description: The package contains local copy of the Synaptic proteome
     for gene sets, synaptic compartments, and brain regions.
 Depends: R (>= 3.5.0), synaptome.data
 Imports: DBI, RSQLite, dplyr, dbplyr, igraph, Rdpack, AnnotationHub, 
-    BioNAR (>= 1.3.9), utils
+    utils
 RdMacros: Rdpack
 License: Artistic-2.0
 Encoding: UTF-8

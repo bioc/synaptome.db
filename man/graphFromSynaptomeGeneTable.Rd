@@ -5,7 +5,7 @@
 \title{Utility function to create network from
 \code{\link{synaptome.db}} data}
 \usage{
-graphFromSynaptomeGeneTable(geneTable, LCC = TRUE, simplify = TRUE)
+graphFromSynaptomeGeneTable(geneTable, LCC = FALSE, simplify = FALSE)
 }
 \arguments{
 \item{geneTable}{data.frame described in

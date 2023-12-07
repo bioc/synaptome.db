@@ -61,8 +61,13 @@ buildNetwork<-function(ff, kw=NA,LCC=TRUE,simplify=TRUE){
         GG <- simplify(GG, remove.multiple=TRUE, remove.loops=TRUE)
     }
     if(LCC){
+        bnr <- system.file(package = "BioNAR")
+        if(nzchar(bnr)){
+            GG <- BioNAR::findLCC(GG)
+        }else{
         warning("LCC calculations not implemented yet.\n",
-                "use BioNAR::findLCC.\n")
+                "Install BioNAR and use BioNAR::findLCC.\n")
+        }
     }
     return(GG)
 }

@@ -5,7 +5,12 @@
 \title{Utility function to create network from
 \code{\link{synaptome.db}} data}
 \usage{
-graphFromSynaptomeGeneTable(geneTable, LCC = FALSE, simplify = FALSE)
+graphFromSynaptomeGeneTable(
+  geneTable,
+  LCC = FALSE,
+  simplify = FALSE,
+  type = c("induced", "limited")
+)
 }
 \arguments{
 \item{geneTable}{data.frame described in
@@ -14,6 +19,12 @@ graphFromSynaptomeGeneTable(geneTable, LCC = FALSE, simplify = FALSE)
 \item{LCC}{if TRUE only largest connected component is returned}
 
 \item{simplify}{if TRUE loops and multiple edges will be removed}
+
+\item{type}{type of the PPI network should be either `induced` (for
+all the PPIs for specific genes, including external genes) or
+`limited` (for PPIs between the genes specified in the query).
+Type could be shortened to recognizable minimum like 'ind'
+or 'lim'.}
 }
 \value{
 network defined by the gene table
@@ -27,4 +38,7 @@ library(synaptome.db)
 cid<-match('Presynaptic', getCompartments()$Name)
 geneTable<-getAllGenes4Compartment(cid)
 gg<-graphFromSynaptomeGeneTable(geneTable)
+}
+\seealso{
+[getPPIbyIDs()]
 }

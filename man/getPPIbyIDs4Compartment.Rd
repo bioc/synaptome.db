@@ -4,7 +4,7 @@
 \alias{getPPIbyIDs4Compartment}
 \title{Prepare induced or limited network for compartment}
 \usage{
-getPPIbyIDs4Compartment(ids, compartmentID, type = c("induced", "limited"))
+getPPIbyIDs4Compartment(ids, compartmentID, type = c("limited", "induced"))
 }
 \arguments{
 \item{ids}{internal gene IDs}
@@ -39,8 +39,8 @@ ppi <- getPPIbyIDs4Compartment(c(1, 15, 156, 1500, 3000, 7000),
 Other {PPI functions}: 
 \code{\link{getIGraphFromPPI}()},
 \code{\link{getPPIbyEntrez}()},
-\code{\link{getPPIbyIDs4BrainRegion}()},
 \code{\link{getPPIbyIDs}()},
+\code{\link{getPPIbyIDs4BrainRegion}()},
 \code{\link{getPPIbyName}()},
 \code{\link{getTableFromPPI}()}
 

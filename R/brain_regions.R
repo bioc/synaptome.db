@@ -200,7 +200,7 @@ getLimitedPPI4BrainRegion <- function(ids, brainRegion, taxID) {
 #' )
 #' head(ppi)
 getPPIbyIDs4BrainRegion <- function(ids, brainRegion, taxID,
-    type = c("induced", "limited")) {
+    type = c("limited","induced")) {
     netType <- match.arg(type)
     gns <- switch(netType,
         induced = getInducedPPI4BrainRegion(ids, brainRegion, taxID),

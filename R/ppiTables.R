@@ -54,7 +54,7 @@ getPPIQuery <- function() {
 #' @examples
 #' t <- getPPIbyIDs(c(48, 585, 710), type = "limited") # (16 rows)
 #' t <- getPPIbyIDs(c(48, 585, 710), type = "induced") # 306 rows
-getPPIbyIDs <- function(ids, type = c("induced", "limited")) {
+getPPIbyIDs <- function(ids, type = c("limited","induced")) {
     netType <- match.arg(type)
     gns <- switch(netType,
         induced = getPPIQuery() %>%
@@ -98,7 +98,7 @@ getPPIbyIDs <- function(ids, type = c("induced", "limited")) {
 #' @md
 #' @examples
 #' t <- getPPIbyEntrez(c(1739, 1740, 1742, 1741), type = "ind")
-getPPIbyEntrez <- function(entrez, type = c("induced", "limited")) {
+getPPIbyEntrez <- function(entrez, type = c("limited","induced")) {
     ids <- getGeneIdByEntrez(entrez)
     df <- getPPIbyIDs(ids, type)
     return(df)
@@ -138,7 +138,7 @@ getPPIbyEntrez <- function(entrez, type = c("induced", "limited")) {
 #'     c("CASK", "DLG4", "GRIN2A", "GRIN2B", "GRIN1"),
 #'     type = "lim"
 #' )
-getPPIbyName <- function(name, type = c("induced", "limited")) {
+getPPIbyName <- function(name, type = c("limited","induced")) {
     ids <- getGeneIdByName(name)
     df <- getPPIbyIDs(ids, type)
     return(df)

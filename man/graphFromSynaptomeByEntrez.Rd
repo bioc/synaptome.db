@@ -5,7 +5,12 @@
 \title{Utility function to create network from
 \code{\link[synaptome.db]{synaptome.db}} data}
 \usage{
-graphFromSynaptomeByEntrez(entrez, LCC = TRUE, simplify = TRUE)
+graphFromSynaptomeByEntrez(
+  entrez,
+  LCC = TRUE,
+  simplify = TRUE,
+  type = c("limited", "induced")
+)
 }
 \arguments{
 \item{entrez}{vector of EntrezIDs for network vertices}
@@ -13,6 +18,12 @@ graphFromSynaptomeByEntrez(entrez, LCC = TRUE, simplify = TRUE)
 \item{LCC}{if TRUE only largest connected component is returned}
 
 \item{simplify}{if TRUE loops and multiple edges will be removed}
+
+\item{type}{type of the PPI network should be either `induced` (for
+all the PPIs for specific genes, including external genes) or
+`limited` (for PPIs between the genes specified in the query).
+Type could be shortened to recognizable minimum like 'ind'
+or 'lim'.}
 }
 \value{
 network defined by the gene table

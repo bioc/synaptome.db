@@ -1,7 +1,7 @@
 Package: synaptome.db
 Type: Package
 Title: Synamptosome Proteome Database
-Version: 0.99.16
+Version: 0.99.17
 Date: 2023-12-07
 Authors@R: c(
     person("Anatoly", "Sorokin", 
@@ -20,7 +20,7 @@ Imports: DBI, RSQLite, dplyr, dbplyr, igraph, Rdpack, AnnotationHub,
 RdMacros: Rdpack
 License: Artistic-2.0
 Encoding: UTF-8
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.2
 VignetteBuilder: knitr
 BugReports: https://github.com/lptolik/synaptome.db/issues/
 biocViews: CustomDBSchema, AnnotationHub, FunctionalAnnotation, AnnotationData

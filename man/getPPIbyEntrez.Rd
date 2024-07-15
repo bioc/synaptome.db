@@ -4,7 +4,7 @@
 \alias{getPPIbyEntrez}
 \title{Extract the PPIs for my list of genes defined by Entrez IDs}
 \usage{
-getPPIbyEntrez(entrez, type = c("induced", "limited"))
+getPPIbyEntrez(entrez, type = c("limited", "induced"))
 }
 \arguments{
 \item{entrez}{Entrez IDs}
@@ -41,9 +41,9 @@ table representation of the PPI \code{data.frame}.
 
 Other {PPI functions}: 
 \code{\link{getIGraphFromPPI}()},
+\code{\link{getPPIbyIDs}()},
 \code{\link{getPPIbyIDs4BrainRegion}()},
 \code{\link{getPPIbyIDs4Compartment}()},
-\code{\link{getPPIbyIDs}()},
 \code{\link{getPPIbyName}()},
 \code{\link{getTableFromPPI}()}
 }

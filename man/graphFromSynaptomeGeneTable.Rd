@@ -9,7 +9,7 @@ graphFromSynaptomeGeneTable(
   geneTable,
   LCC = FALSE,
   simplify = FALSE,
-  type = c("induced", "limited")
+  type = c("limited", "induced")
 )
 }
 \arguments{

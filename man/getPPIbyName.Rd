@@ -4,7 +4,7 @@
 \alias{getPPIbyName}
 \title{Extract the PPIs for my list of genes defined by Gene name}
 \usage{
-getPPIbyName(name, type = c("induced", "limited"))
+getPPIbyName(name, type = c("limited", "induced"))
 }
 \arguments{
 \item{name}{Gene names}
@@ -44,9 +44,9 @@ table representation of the PPI \code{data.frame}.
 Other {PPI functions}: 
 \code{\link{getIGraphFromPPI}()},
 \code{\link{getPPIbyEntrez}()},
+\code{\link{getPPIbyIDs}()},
 \code{\link{getPPIbyIDs4BrainRegion}()},
 \code{\link{getPPIbyIDs4Compartment}()},
-\code{\link{getPPIbyIDs}()},
 \code{\link{getTableFromPPI}()}
 }
 \concept{{PPI functions}}

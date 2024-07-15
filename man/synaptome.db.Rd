@@ -2,8 +2,8 @@
 % Please edit documentation in R/synaptome_db.R
 \docType{package}
 \name{synaptome.db}
-\alias{synaptome.db}
 \alias{synaptome.db-package}
+\alias{synaptome.db}
 \title{synaptome.db: programmatic access to the Synaptic proteome database}
 \description{
 The package obtains a local copy of the Synaptic proteome database

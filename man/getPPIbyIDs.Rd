@@ -4,7 +4,7 @@
 \alias{getPPIbyIDs}
 \title{Extract the PPIs for my list of genes defined by GeneID}
 \usage{
-getPPIbyIDs(ids, type = c("induced", "limited"))
+getPPIbyIDs(ids, type = c("limited", "induced"))
 }
 \arguments{
 \item{ids}{Gene IDs}

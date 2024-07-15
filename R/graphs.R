@@ -4,6 +4,11 @@
 #' @param entrez vector of EntrezIDs for network vertices
 #' @param LCC if TRUE only largest connected component is returned
 #' @param simplify if TRUE loops and multiple edges will be removed
+#' @param type type of the PPI network should be either `induced` (for
+#'     all the PPIs for specific genes, including external genes) or
+#'     `limited` (for PPIs between the genes specified in the query).
+#'     Type could be shortened to recognizable minimum like 'ind'
+#'     or 'lim'.
 #'
 #' @return network defined by the gene table
 #' @export
@@ -13,9 +18,12 @@
 #' cid<-match('Presynaptic', getCompartments()$Name)
 #' geneTable<-getAllGenes4Compartment(cid)
 #' gg<-graphFromSynaptomeByEntrez(geneTable$HumanEntrez)
-graphFromSynaptomeByEntrez<-function(entrez,LCC=TRUE,simplify=TRUE){
+graphFromSynaptomeByEntrez<-function(entrez,LCC=TRUE,simplify=TRUE,
+                                     type = c("limited","induced")){
+    type <- match.arg(type)
     geneTable<-findGenesByEntrez(entrez)
-    gg<-graphFromSynaptomeGeneTable(geneTable,LCC=LCC,simplify=simplify)
+    gg<-graphFromSynaptomeGeneTable(geneTable,LCC=LCC,simplify=simplify,
+                                    type=type)
     return(gg)
 }
 
@@ -42,7 +50,8 @@ graphFromSynaptomeByEntrez<-function(entrez,LCC=TRUE,simplify=TRUE){
 #' geneTable<-getAllGenes4Compartment(cid)
 #' gg<-graphFromSynaptomeGeneTable(geneTable)
 graphFromSynaptomeGeneTable<-function(geneTable,LCC=FALSE,simplify=FALSE,
-                                      type = c("induced", "limited")){
+                                      type = c("limited","induced")){
+    type <- match.arg(type)
     p<-getPPIbyIDs(geneTable$GeneID, type = type)
     aidx<-match(p$A, geneTable$GeneID)
     bidx<-match(p$B, geneTable$GeneID)

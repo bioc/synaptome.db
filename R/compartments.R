@@ -143,7 +143,7 @@ getLimitedPPI4Compartment <- function(ids, compartmentID) {
 #'     compartmentID = 1, type = "induced"
 #' ) # 201 rows
 getPPIbyIDs4Compartment <- function(ids, compartmentID,
-    type = c("induced", "limited")) {
+    type = c("limited","induced")) {
     netType <- match.arg(type)
     gns <- switch(netType,
         induced = getInducedPPI4Compartment(ids, compartmentID),

@@ -1,7 +1,7 @@
 Package: synaptome.db
 Type: Package
 Title: Synamptosome Proteome Database
-Version: 0.99.17
+Version: 0.99.16
 Date: 2023-12-07
 Authors@R: c(
     person("Anatoly", "Sorokin", 
